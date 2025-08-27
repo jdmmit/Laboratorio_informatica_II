@@ -2,6 +2,73 @@
 
 using namespace std;
 
+int A, B;
+
+void pedir_Valores()
+{
+    cout << "Ingresa el valor de A: " << endl;
+    cin >> A;
+    cout << "Ingresa el valor de B: " << endl;
+    cin >> B;
+}
+
+void ejercicio1()
+{
+    cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el residuo de la division A/B." << endl;
+    cout << "Ejemplo: si se ingresan 8 y 3 se debe imprimir: El residuo de la division 8/3 es: 2" << "\n"
+         << endl;
+
+    pedir_Valores();
+
+    cout << "El residuo de la division " << A << "/" << B << " es: " << A % B << endl;
+    cout << "-----------------------------------------" << endl;
+}
+
+void ejercicio2()
+{
+    cout << "Ejecutando Ejercicio 2..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida un numero N e imprima en pantalla si es par o impar." << endl;
+
+    int N;
+
+    cout << "Ingrese un numero: " << endl;
+    cin >> N;
+
+    if (N % 2 == 0)
+    {
+        cout << "El numero " << N << " es par." << endl;
+    }
+    else
+    {
+        cout << "El numero " << N << " es impar." << endl;
+    }
+    cout << "-----------------------------------------" << endl;
+}
+
+void ejercicio3()
+{
+    cout << "Ejecutando Ejercicio 3..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida dos números A y B e imprima en pantalla el mayor." << endl;
+
+    pedir_Valores();
+
+    if (A > B)
+    {
+        cout << "El mayor es: " << A << endl;
+    }
+    else if (B > A)
+    {
+        cout << "El mayor es: " << B << endl;
+    }
+    else
+    {
+        cout << "Los numeros son iguales." << endl;
+    }
+    cout << "-----------------------------------------" << endl;
+}
+
 int main()
 {
     cout << "-----MENU DEL LABORATORIO PRACTICO 1-----" << endl;
@@ -32,135 +99,67 @@ int main()
         cout << "18. Ejercicio 18" << endl;
         cout << "-----------------------------------------" << endl;
         cout << "19. Salir" << endl;
+        cout << "Ingrese una opcion: " << endl;
 
         cin >> opcion;
 
         switch (opcion)
         {
         case 1:
-            cout << "Ejecutando Ejercicio 1..." << endl;
-            cout << "-----------------------------------------" << endl;
-            cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el residuo de la division A/B." << endl;
-            cout << "Ejemplo: si se ingresan 8 y 3 se debe imprimir: El residuo de la division 8/3 es: 2" << "\n"
-                 << endl;
-
-            int A, B;
-
-            cout << "Ingrese el valor del numero A: " << endl;
-            cin >> A;
-            cout << "Ingrese el valor del numero B: " << endl;
-            cin >> B;
-            cout << "El residuo de la division " << A << "/" << B << " es: " << A % B << endl;
-            cout << "-----------------------------------------" << endl;
-
+            ejercicio1();
             break;
         case 2:
-            cout << "Ejecutando Ejercicio 2..." << endl;
-            cout << "-----------------------------------------" << endl;
-            cout << "Escriba un programa que pida un numero N e imprima en pantalla si es par o impar." << endl;
-
-            int N;
-
-            cout << "Ingrese un numero: " << endl;
-            cin >> N;
-
-            if (N % 2 == 0)
-            {
-                cout << "El numero " << N << " es par." << endl;
-            }
-            else
-            {
-                cout << "El numero " << N << " es impar." << endl;
-            }
-            cout << "-----------------------------------------" << endl;
-
+            ejercicio2();
             break;
         case 3:
-            cout << "Ejecutando Ejercicio 3..." << endl;
-            cout << "-----------------------------------------" << endl;
-            cout << "Escriba un programa que pida dos números A y B e imprima en pantalla el mayor." << endl;
+            ejercicio3();
+            break;
 
-            int C, D;
-            cout << "Ingrese el valor de C: " << endl;
-            cin >> C;
-            cout << "Ingrese el valor de D: " << endl;
-            cin >> D;
-
-            if (C > D)
-            {
-                cout << "El mayor es: " << C << endl;
-            }
-            else if (D > C)
-            {
-                cout << "El mayor es: " << D << endl;
-            }
-            else
-            {
-                cout << "Los numeros son iguales." << endl;
-            }
-            cout << "-----------------------------------------" << endl;
-
-            break;
-        case 4:
-            cout << "Ejecutando Ejercicio 4..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 5:
-            cout << "Ejecutando Ejercicio 5..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 6:
-            cout << "Ejecutando Ejercicio 6..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 7:
-            cout << "Ejecutando Ejercicio 7..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 8:
-            cout << "Ejecutando Ejercicio 8..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 9:
-            cout << "Ejecutando Ejercicio 9..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 10:
-            cout << "Ejecutando Ejercicio 10..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 11:
-            cout << "Ejecutando Ejercicio 11..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 12:
-            cout << "Ejecutando Ejercicio 12..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 13:
-            cout << "Ejecutando Ejercicio 13..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 14:
-            cout << "Ejecutando Ejercicio 14..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 15:
-            cout << "Ejecutando Ejercicio 15..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 16:
-            cout << "Ejecutando Ejercicio 16..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 17:
-            cout << "Ejecutando Ejercicio 17..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
-        case 18:
-            cout << "Ejecutando Ejercicio 18..." << endl;
-            cout << "-----------------------------------------" << endl;
-            break;
+        // case 4:
+        //   ejercicio4();
+        //   break;
+        // case 5:
+        //   ejercicio5();
+        //   break;
+        // case 6:
+        //   ejercicio6();
+        //   break;
+        // case 7:
+        //   ejercicio7();
+        //   break;
+        // case 8:
+        //   ejercicio8();
+        //   break;
+        // case 9:
+        //   ejercicio9();
+        //   break;
+        // case 10:
+        //   ejercicio10();
+        //   break;
+        // case 11:
+        //   ejercicio11();
+        //   break;
+        // case 12:
+        //   ejercicio12();
+        //   break;
+        // case 13:
+        //   ejercicio13();
+        //   break;
+        // case 14:
+        //   ejercicio14();
+        //   break;
+        // case 15:
+        //   ejercicio15();
+        //   break;
+        // case 16:
+        //   ejercicio16();
+        //   break;
+        // case 17:
+        //   ejercicio17();
+        //   break;
+        // case 18:
+        //   ejercicio18();
+        //   break;
         case 19:
             cout << "Saliendo del programa..." << endl;
             break;
@@ -168,6 +167,7 @@ int main()
             cout << "Opcion invalida. Por favor, seleccione una opcion del 1 al 18." << endl;
             break;
         }
+
+        cout << endl;
     }
-    return 0;
 }
