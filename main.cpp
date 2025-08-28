@@ -1,4 +1,7 @@
 #include <iostream>
+#include <iostream>
+#include <cmath>
+#include <iomanip> // Para setprecision
 
 using namespace std;
 
@@ -69,6 +72,99 @@ void ejercicio3()
     cout << "-----------------------------------------" << endl;
 }
 
+void ejercicio4()
+{
+    cout << "Ejecutando Ejercicio 4..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida dos números A y B e imprima en pantalla el menor." << endl;
+
+    pedir_Valores();
+
+    if (A < B)
+    {
+        cout << "El menor es: " << A << endl;
+    }
+    else if (B < A)
+    {
+        cout << "El menor es: " << B << endl;
+    }
+    else
+    {
+        cout << "Los numeros son iguales." << endl;
+    }
+    cout << "-----------------------------------------" << endl;
+}
+
+void ejercicio5()
+{
+    cout << "Ejecutando Ejercicio 5..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida dos números A y B e imprima en pantalla la división A/B con redondeo." << endl;
+
+    pedir_Valores();
+
+    double resultado = (double)A / (double)B;
+
+    // Opción 1: Redondeado al entero más cercano
+    cout << "La división de A/B redondeada al entero más cercano es: " << round(resultado) << endl;
+
+    // Opción 2: Redondeado a 2 decimales
+    cout << fixed << setprecision(2);
+    cout << "La división de A/B redondeada a 2 decimales es: " << resultado << endl;
+}
+
+void ejercicio6()
+{
+    cout << "Ejecutando Ejercicio 6..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida dos números A y B e imprima en pantalla la potencia AB, sin hacer uso de librerías matemáticas." << endl;
+
+    pedir_Valores();
+
+    int resultado = 1;
+    for (int i = 0; i < B; i++)
+    {
+        resultado *= A;
+    }
+    cout << "La potencia " << A << "^" << B << " es: " << resultado << endl;
+}
+
+void ejercicio7()
+{
+    cout << "Ejecutando Ejercicio 7..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida un número N e imprima en pantalla la suma de todos los números entre 0 y N (incluyéndose el mismo)." << endl;
+
+    int N;
+    cout << "Ingrese un número: " << endl;
+    cin >> N;
+
+    int suma = 0;
+    for (int i = 0; i <= N; i++)
+    {
+        suma += i;
+    }
+    cout << "La suma de los números entre 0 y " << N << " es: " << suma << endl;
+}
+
+void ejercicio8()
+{
+    cout << "Ejecutando Ejercicio 8..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida un número N e imprima en pantalla su factorial." << endl;
+
+    int N;
+    cout << "Ingrese un número: " << endl;
+    cin >> N;
+
+    int factorial = 1;
+    for (int i = 1; i <= N; i++)
+    {
+        factorial *= i;
+    }
+    cout << "El factorial de " << N << " es: " << factorial << endl;
+}
+
 int main()
 {
     cout << "-----MENU DEL LABORATORIO PRACTICO 1-----" << endl;
@@ -115,21 +211,21 @@ int main()
             ejercicio3();
             break;
 
-        // case 4:
-        //   ejercicio4();
-        //   break;
-        // case 5:
-        //   ejercicio5();
-        //   break;
-        // case 6:
-        //   ejercicio6();
-        //   break;
-        // case 7:
-        //   ejercicio7();
-        //   break;
-        // case 8:
-        //   ejercicio8();
-        //   break;
+        case 4:
+            ejercicio4();
+            break;
+        case 5:
+            ejercicio5();
+            break;
+        case 6:
+            ejercicio6();
+            break;
+        case 7:
+            ejercicio7();
+            break;
+        case 8:
+            ejercicio8();
+            break;
         // case 9:
         //   ejercicio9();
         //   break;
