@@ -14,7 +14,7 @@ void pedir_Valores()
 
 int main()
 {
-    cout << "Ejecutando Ejercicio 5..." << endl;
+    cout << "Ejecutando Ejercicio 9..." << endl;
     cout << "-----------------------------------------" << endl;
     cout << "Escriba un programa que pida un número N e imprima el perímetro y área de un círculo con radio N. Nota: use 3.1416 como una aproximación de pi." << endl;
 

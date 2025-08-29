@@ -43,8 +43,7 @@ int main()
             cout << "Ejecutando Ejercicio 1..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el residuo de la division A/B." << endl;
-            cout << "Ejemplo: si se ingresan 8 y 3 se debe imprimir: El residuo de la division 8/3 es: 2" << "\n"
-                 << endl;
+            cout << endl;
 
             int A, B;
 
@@ -214,47 +213,176 @@ int main()
         {
             cout << "Ejecutando Ejercicio 9..." << endl;
             cout << "-----------------------------------------" << endl;
-            break;
+            cout << "Escriba un programa que pida un número N e imprima el perímetro y área de un círculo con radio N. Nota: use 3.1416 como una aproximación de pi." << endl;
+
+            double N;
+            cout << "Ingrese el valor de N: " << endl;
+            cin >> N;
+
+            double perimetro = 2 * 3.1416 * N;
+            double area = 3.1416 * N * N;
+
+            cout << "El perímetro del círculo es: " << perimetro << endl;
+            cout << "El área del círculo es: " << area << endl;
+
+            return 0;
         }
         case 10:
         {
             cout << "Ejecutando Ejercicio 10..." << endl;
             cout << "-----------------------------------------" << endl;
-            break;
+            cout << "Escriba un programa que pida un número N e imprima en pantalla todos los múltiplos de dicho número entre 1 y 100." << endl;
+
+            int N;
+            cout << "Ingrese un número: ";
+            cin >> N;
+            cout << "Múltiplos de " << N << " entre 1 y 100:" << endl;
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % N == 0)
+                {
+                    cout << i << endl;
+                }
+            }
+            return 0;
         }
         case 11:
         {
             cout << "Ejecutando Ejercicio 11..." << endl;
             cout << "-----------------------------------------" << endl;
+            cout << "Escriba un programa que pida un número N e imprima en pantalla su tabla de multiplicar hasta 10xN." << endl;
+
+            int N;
+            cout << "Ingrese el valor de N: " << endl;
+            cin >> N;
+
+            for (int i = 1; i <= 10; i++)
+            {
+                cout << N << " x " << i << " = " << N * i << endl;
+            }
             break;
         }
         case 12:
             cout << "Ejecutando Ejercicio 12..." << endl;
             cout << "-----------------------------------------" << endl;
+            cout << "Escriba un programa que pida un número N e imprima todas las potencias desde N^1 hasta N^5." << endl;
+
+            int N;
+            cout << "Ingrese el valor de N: ";
+            cin >> N;
+
+            int potencia = 1; // empezamos en N^0 = 1
+
+            for (int i = 1; i <= 5; i++)
+            {
+                potencia *= N; // multiplicamos por N en cada paso
+                cout << N << "^" << i << " = " << potencia << endl;
+            }
             break;
         case 13:
             cout << "Ejecutando Ejercicio 13..." << endl;
             cout << "-----------------------------------------" << endl;
+            cout << "Escriba un programa que pida un número N e imprima todos los divisores de N." << endl;
+
+            int N;
+            cout << "Ingrese un número: ";
+            cin >> N;
+
+            cout << "Los divisores de " << N << " son: ";
+            for (int i = 1; i <= N; i++)
+            {
+                if (N % i == 0)
+                {
+                    cout << i << " ";
+                }
+            }
+            cout << endl;
             break;
         case 14:
             cout << "Ejecutando Ejercicio 14..." << endl;
             cout << "-----------------------------------------" << endl;
+            cout << "Escriba un programa que imprima dos columnas paralelas, una con los números del 1 al 50 y otra con los números del 50 al 1." << endl;
+
+            for (int i = 1; i <= 50; i++)
+            {
+                cout << i << "\t" << (51 - i) << endl;
+            }
             break;
         case 15:
             cout << "Ejecutando Ejercicio 15..." << endl;
             cout << "-----------------------------------------" << endl;
+            cout << "Escriba un programa que pida constantemente números hasta que se ingrese el número cero e imprima en pantalla la suma de todos los números ingresados." << endl;
+
+            int numero, suma = 0;
+
+            while (true)
+            {
+                cout << "Ingrese un número (0 para terminar): ";
+                cin >> numero;
+
+                if (numero == 0)
+                    break; // condición de salida
+
+                suma += numero;
+            }
+
+            cout << "La suma de todos los números ingresados es: " << suma << endl;
             break;
         case 16:
             cout << "Ejecutando Ejercicio 16..." << endl;
             cout << "-----------------------------------------" << endl;
+            cout << "Escriba un programa que pida constantemente números hasta que se ingrese el número cero e imprima en pantalla el promedio de los números ingresados (excluyendo el cero)." << endl;
+
+            int numero, suma = 0, contador = 0;
+
+            cout << "Ingrese un número (0 para terminar): ";
+            while (cin >> numero && numero != 0)
+            {
+                suma += numero;
+                contador++;
+                cout << "Ingrese un número (0 para terminar): ";
+            }
+
+            if (contador)
+                cout << "El promedio de los números ingresados es: " << (double)suma / contador << endl;
+            else
+                cout << "No se ingresaron números válidos." << endl;
+
             break;
         case 17:
             cout << "Ejecutando Ejercicio 17..." << endl;
             cout << "-----------------------------------------" << endl;
+            cout << "Escriba un programa que pida constantemente números hasta que se ingrese el número cero e imprima en pantalla el mayor de todos los números ingresados." << endl;
+
+            int numero, mayor;
+            bool hayNumeros = false; // bandera para saber si se ingresó al menos un número
+
+            cout << "Ingrese un número (0 para terminar): ";
+            while (cin >> numero && numero != 0)
+            {
+                if (!hayNumeros || numero > mayor)
+                {
+                    mayor = numero;
+                    hayNumeros = true;
+                }
+                cout << "Ingrese un número (0 para terminar): ";
+            }
+
+            if (hayNumeros)
+                cout << "El mayor de los números ingresados es: " << mayor << endl;
+            else
+                cout << "No se ingresaron números válidos." << endl;
             break;
         case 18:
-            cout << "Ejecutando Ejercicio 18..." << endl;
-            cout << "-----------------------------------------" << endl;
+            cout << "Ejecutando Ejercicio 18...\n";
+            cout << "-----------------------------------------\n";
+            cout << "Escriba un programa que pida un número N e imprima si es o no un cuadrado perfecto.\n";
+
+            int N;
+            cout << "Ingrese un número: ";
+            cin >> N;
+
+            cout << N << (sqrt(N) == (int)sqrt(N) ? " es " : " no es ") << "un cuadrado perfecto.\n";
             break;
         case 19:
             cout << "Saliendo del programa..." << endl;

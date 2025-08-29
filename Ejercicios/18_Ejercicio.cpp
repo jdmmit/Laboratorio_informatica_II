@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -14,8 +15,15 @@ void pedir_Valores()
 
 int main()
 {
-    cout << "Ejecutando Ejercicio 5..." << endl;
-    cout << "-----------------------------------------" << endl;
+    cout << "Ejecutando Ejercicio 18...\n";
+    cout << "-----------------------------------------\n";
+    cout << "Escriba un programa que pida un número N e imprima si es o no un cuadrado perfecto.\n";
+
+    int N;
+    cout << "Ingrese un número: ";
+    cin >> N;
+
+    cout << N << (sqrt(N) == (int)sqrt(N) ? " es " : " no es ") << "un cuadrado perfecto.\n";
 
     return 0;
 }

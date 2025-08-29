@@ -21,7 +21,7 @@ int main()
     pedir_Valores();
 
     int resultado = 1;
-    for (int i = 0; i < B; i++)
+    for (int i = 1; i < B; i++)
     {
         resultado *= A;
     }
