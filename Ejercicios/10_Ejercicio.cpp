@@ -16,12 +16,12 @@ int main()
 {
     cout << "Ejecutando Ejercicio 10..." << endl;
     cout << "-----------------------------------------" << endl;
-    cout << "Escriba un programa que pida un número N e imprima en pantalla todos los múltiplos de dicho número entre 1 y 100." << endl;
+    cout << "Escriba un programa que pida un numero N e imprima en pantalla todos los multiplos de dicho numero entre 1 y 100." << endl;
 
     int N;
-    cout << "Ingrese un número: ";
+    cout << "Ingrese un numero: ";
     cin >> N;
-    cout << "Múltiplos de " << N << " entre 1 y 100:" << endl;
+    cout << "Multiplos de " << N << " entre 1 y 100:" << endl;
     for (int i = 1; i <= 100; i++)
     {
         if (i % N == 0)

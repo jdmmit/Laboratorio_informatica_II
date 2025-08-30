@@ -14,14 +14,18 @@ void pedir_Valores()
 
 int main()
 {
-    cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el residuo de la division A/B." << endl;
-    cout << "Ejemplo: si se ingresan 8 y 3 se debe imprimir: El residuo de la division 8/3 es: 2" << "\n"
-         << endl;
-
-    pedir_Valores();
-
-    cout << "El residuo de la division " << A << "/" << B << " es: " << A % B << endl;
+    cout << "Ejecutando Ejercicio 22..." << endl;
     cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida una cantidad entera de segundos y la imprima en formato horas:minutos:segundos." << endl;
+
+    int s;
+    cout << "Ingrese la cantidad de segundos: ";
+    cin >> s;
+
+    cout << s << " segundos equivalen a "
+         << s / 3600 << " horas, "
+         << (s % 3600) / 60 << " minutos y "
+         << s % 60 << " segundos." << endl;
 
     return 0;
 }

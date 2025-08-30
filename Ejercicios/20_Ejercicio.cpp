@@ -14,14 +14,22 @@ void pedir_Valores()
 
 int main()
 {
-    cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el residuo de la division A/B." << endl;
-    cout << "Ejemplo: si se ingresan 8 y 3 se debe imprimir: El residuo de la division 8/3 es: 2" << "\n"
-         << endl;
+    cout << "Ejecutando Ejercicio 20... " << endl;
+    cout
+        << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida un numero N e imprima si es o no un palindromo (igual de derecha a izquierda que de izquierda a derecha)." << endl;
 
-    pedir_Valores();
+    int N, orig, inv = 0;
+    cout << "Ingrese un numero: ";
+    cin >> N;
+    orig = N;
 
-    cout << "El residuo de la division " << A << "/" << B << " es: " << A % B << endl;
-    cout << "-----------------------------------------" << endl;
+    while (N)
+    {
+        inv = inv * 10 + N % 10;
+        N /= 10;
+    }
 
+    cout << (orig == inv ? "El numero es un palindromo." : "El numero no es un palindromo.") << endl;
     return 0;
 }

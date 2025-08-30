@@ -16,7 +16,7 @@ int main()
 {
     cout << "Ejecutando Ejercicio 6..." << endl;
     cout << "-----------------------------------------" << endl;
-    cout << "Escriba un programa que pida dos números A y B e imprima en pantalla la potencia AB, sin hacer uso de librerías matemáticas." << endl;
+    cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla la potencia AB, sin hacer uso de librerias matematicas." << endl;
 
     pedir_Valores();
 

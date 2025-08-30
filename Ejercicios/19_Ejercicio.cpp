@@ -14,14 +14,22 @@ void pedir_Valores()
 
 int main()
 {
-    cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el residuo de la division A/B." << endl;
-    cout << "Ejemplo: si se ingresan 8 y 3 se debe imprimir: El residuo de la division 8/3 es: 2" << "\n"
-         << endl;
-
-    pedir_Valores();
-
-    cout << "El residuo de la division " << A << "/" << B << " es: " << A % B << endl;
+    cout << "Ejecutando Ejercicio 19..." << endl;
     cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida un numero N e imprima si es o no un numero primo" << endl;
 
+    int N;
+    cout << "Ingrese un numero: ";
+    cin >> N;
+
+    bool primo = (N > 1);
+
+    for (int i = 2; i * i <= N && primo; i++)
+    {
+        if (N % i == 0)
+            primo = false;
+    }
+
+    cout << "El numero " << N << (primo ? " es primo." : " no es primo.") << endl;
     return 0;
 }

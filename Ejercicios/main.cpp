@@ -345,6 +345,285 @@ void ejercicio18()
     cout << N << (sqrt(N) == (int)sqrt(N) ? " es " : " no es ") << "un cuadrado perfecto." << endl;
 }
 
+void ejercicio19()
+{
+    cout << "Ejecutando Ejercicio 19..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida un numero N e imprima si es o no un numero primo" << endl;
+
+    int N;
+    cout << "Ingrese un numero: ";
+    cin >> N;
+
+    bool primo = (N > 1);
+
+    for (int i = 2; i * i <= N && primo; i++)
+    {
+        if (N % i == 0)
+            primo = false;
+    }
+
+    cout << "El numero " << N << (primo ? " es primo." : " no es primo.") << endl;
+}
+void ejercicio20()
+{
+    cout << "Ejecutando Ejercicio 20..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida un numero N e imprima si es o no un palindromo (igual de derecha a izquierda que de izquierda a derecha)." << endl;
+
+    int N, orig, inv = 0;
+    cout << "Ingrese un numero: ";
+    cin >> N;
+    orig = N;
+
+    while (N)
+    {
+        inv = inv * 10 + N % 10;
+        N /= 10;
+    }
+
+    cout << (orig == inv ? "El numero es un palindromo." : "El numero no es un palindromo.") << endl;
+}
+void ejercicio21()
+{
+    cout << "Ejecutando Ejercicio 21..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida un caracter C, si es una letra la debe convertir de mayuscula a minuscula y viceversa e imprimirla." << endl;
+
+    char C;
+    cout << "Ingrese un caracter: ";
+    cin >> C;
+
+    if (C >= 'A' && C <= 'Z')
+        cout << "En minuscula: " << char(C + 32) << endl;
+    else if (C >= 'a' && C <= 'z')
+        cout << "En mayuscula: " << char(C - 32) << endl;
+    else
+        cout << "El caracter ingresado no es una letra." << endl;
+}
+void ejercicio22()
+{
+    cout << "Ejecutando Ejercicio 22..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida una cantidad entera de segundos y la imprima en formato horas:minutos:segundos." << endl;
+
+    int s;
+    cout << "Ingrese la cantidad de segundos: ";
+    cin >> s;
+
+    cout << s << " segundos equivalen a "
+         << s / 3600 << " horas, "
+         << (s % 3600) / 60 << " minutos y "
+         << s % 60 << " segundos." << endl;
+}
+void ejercicio23()
+{
+    cout << "Ejecutando Ejercicio 23..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el minimo comun multiplo entre los dos." << endl;
+
+    int A, B;
+    cout << "Ingrese dos numeros: ";
+    cin >> A >> B;
+
+    int x = A, y = B;
+    while (y != 0)
+    {
+        int temp = y;
+        y = x % y;
+        x = temp;
+    }
+
+    cout << "El minimo comun multiplo de " << A << " y " << B
+         << " es: " << (A * B) / x << endl;
+}
+void ejercicio24()
+{
+    cout << "Ejecutando Ejercicio 24..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida una numero entero e imprima un cuadrado de dicho tamano, los bordes del cuadrado deben estar hechos con el caracter `+' y el interior debe estar vacio." << endl;
+
+    int N;
+    cout << "Ingrese el tamano del cuadrado: ";
+    cin >> N;
+
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+            cout << ((i == 0 || i == N - 1 || j == 0 || j == N - 1) ? '+' : ' ');
+        cout << endl;
+    }
+}
+void ejercicio25()
+{
+    cout << "Ejecutando Ejercicio 25..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida un numero N e imprima en pantalla la cantidad de digitos de N." << endl;
+
+    int N;
+    cout << "Ingrese un numero: ";
+    cin >> N;
+
+    int digitos = (N == 0) ? 1 : 0;
+    while (N != 0)
+    {
+        N /= 10;
+        digitos++;
+    }
+
+    cout << "La cantidad de digitos es: " << digitos << endl;
+}
+void ejercicio26()
+{
+    cout << "Ejecutando Ejercicio 26..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que pida tres numeros e imprima el tipo de triangulo (isosceles, equilatero, escaleno) que se formaria, si sus lados tienen la longitud definida por los numeros ingresados. Tenga en cuenta el caso en que los numeros ingresados no forman un triangulo." << endl;
+
+    int a, b, c;
+    cout << "Ingrese tres lados: ";
+    cin >> a >> b >> c;
+
+    if (a <= 0 || b <= 0 || c <= 0)
+        cout << "Los lados deben ser positivos." << endl;
+    else if (a + b > c && a + c > b && b + c > a)
+    {
+        if (a == b && b == c)
+            cout << "El triangulo es equilatero." << endl;
+        else if (a == b || a == c || b == c)
+            cout << "El triangulo es isosceles." << endl;
+        else
+            cout << "El triangulo es escaleno." << endl;
+    }
+    else
+        cout << "Los numeros ingresados no forman un triangulo." << endl;
+}
+void ejercicio27()
+{
+    cout << "Ejecutando Ejercicio 27..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que actue como una calculadora con operaciones de suma, resta, multiplicacion y division, el usuario debe ingresar los operandos y la operacion a realizar." << endl;
+
+    double A, B, resultado;
+    char op;
+
+    cout << "Ingrese el primer numero: ";
+    cin >> A;
+    cout << "Ingrese el segundo numero: ";
+    cin >> B;
+    cout << "Ingrese la operacion (+, -, *, /): ";
+    cin >> op;
+
+    switch (op)
+    {
+    case '+':
+        resultado = A + B;
+        break;
+    case '-':
+        resultado = A - B;
+        break;
+    case '*':
+        resultado = A * B;
+        break;
+    case '/':
+        if (B != 0)
+            resultado = A / B;
+        else
+        {
+            cout << "Error: division por cero no permitida." << endl;
+        }
+        break;
+    default:
+        cout << "Operacion no valida." << endl;
+        break;
+    }
+
+    cout << "El resultado de " << A << " " << op << " " << B << " es: " << resultado << endl;
+}
+void ejercicio28()
+{
+    cout << "Ejecutando Ejercicio 28..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que encuentre el valor aproximado de pi en base a la siguiente suma infinita:" << endl;
+    cout << "π = 4(1 − 1/3 + 1/5 − 1/7 + 1/9 − ...)" << endl;
+    cout << "El usuario debe ingresar el numero de elementos usados en la aproximacion: ";
+
+    int n;
+    cout << "Ingrese el numero de elementos: ";
+    cin >> n;
+
+    double pi = 0;
+    for (int i = 0; i < n; i++)
+        pi += ((i % 2 == 0) ? 1.0 : -1.0) / (2 * i + 1);
+
+    cout << "Valor aproximado de pi con " << n
+         << " terminos: " << pi * 4 << endl;
+}
+void ejercicio29()
+{
+    cout << "Ejecutando Ejercicio 29..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que adivine un numero A (entre 0 y 100) seleccionado por el usuario(el numero NO se ingresa al programa), el programa imprimira en pantalla un numero B y el usuario usara los simbolos `> ', `<' y `=' para indicarle al programa si B es mayor, menor o igual que A.El programa imprimira un nuevo numero B, con base en simbolo ingresado por el usuario, y repetira el proceso hasta acertar el numero seleccionado por usuario." << endl;
+
+    int low = 0, high = 100, B;
+    char simbolo;
+
+    cout << "Piensa un numero entre 0 y 100 y yo intentare adivinarlo." << endl;
+
+    do
+    {
+        B = (low + high) / 2; // estrategia de busqueda binaria
+        cout << "¿Es " << B << "? (>, <, =): ";
+        cin >> simbolo;
+
+        if (simbolo == '>')
+            low = B + 1;
+        else if (simbolo == '<')
+            high = B - 1;
+        else if (simbolo == '=')
+            cout << "¡Genial! El numero es " << B << endl;
+        else
+            cout << "Entrada no valida. Use >, < o =." << endl;
+
+    } while (simbolo != '=');
+}
+void ejercicio30()
+{
+    cout << "Ejecutando Ejercicio 30..." << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que genere un numero aleatorio A (entre 0 y 100) y le pida al usuario que lo adivine, el usuario ingresa un numero B y el programa le dira si B es mayor o menor que A, esto se repetira hasta que el usuario adivine el numero, en ese momento el programa le dira el numero de intentos que tardo el usuario en adivinar el numero. Nota: para generar el numero aleatorio use la funcion rand() de la libreria <cstdlib>, recuerde convertirlo al rango (0,100)." << endl;
+
+    srand(time(0));       // semilla aleatoria
+    int A = rand() % 101; // numero entre 0 y 100
+    int B, intentos = 0;
+
+    while (true)
+    {
+        cout << "Ingresa tu intento: ";
+        cin >> B;
+        intentos++;
+
+        if (B < 0 || B > 100)
+        {
+            cout << "Numero fuera de rango. Intenta nuevamente (0 - 100)." << endl;
+            continue;
+        }
+
+        if (B > A)
+        {
+            cout << "El numero secreto es MENOR que " << B << endl;
+        }
+        else if (B < A)
+        {
+            cout << "El numero secreto es MAYOR que " << B << endl;
+        }
+        else
+        {
+            cout << "¡Correcto! El numero era " << A << endl;
+            cout << "Intentos realizados: " << intentos << endl;
+            break;
+        }
+    }
+}
 int main()
 {
     cout << "-----MENU DEL LABORATORIO PRACTICO 1-----" << endl;
@@ -352,7 +631,7 @@ int main()
 
     int opcion = 0;
 
-    while (opcion != 19)
+    while (opcion != 31)
     {
 
         cout << "1. Ejercicio 1" << endl;
@@ -373,8 +652,20 @@ int main()
         cout << "16. Ejercicio 16" << endl;
         cout << "17. Ejercicio 17" << endl;
         cout << "18. Ejercicio 18" << endl;
+        cout << "19. Ejercicio 19" << endl;
+        cout << "20. Ejercicio 20" << endl;
+        cout << "21. Ejercicio 21" << endl;
+        cout << "22. Ejercicio 22" << endl;
+        cout << "23. Ejercicio 23" << endl;
+        cout << "24. Ejercicio 24" << endl;
+        cout << "25. Ejercicio 25" << endl;
+        cout << "26. Ejercicio 26" << endl;
+        cout << "27. Ejercicio 27" << endl;
+        cout << "28. Ejercicio 28" << endl;
+        cout << "29. Ejercicio 29" << endl;
+        cout << "30. Ejercicio 30" << endl;
         cout << "-----------------------------------------" << endl;
-        cout << "19. Salir" << endl;
+        cout << "31. Salir" << endl;
         cout << "Ingrese una opcion: " << endl;
 
         cin >> opcion;
@@ -437,6 +728,42 @@ int main()
             ejercicio18();
             break;
         case 19:
+            ejercicio19();
+            break;
+        case 20:
+            ejercicio20();
+            break;
+        case 21:
+            ejercicio21();
+            break;
+        case 22:
+            ejercicio22();
+            break;
+        case 23:
+            ejercicio23();
+            break;
+        case 24:
+            ejercicio24();
+            break;
+        case 25:
+            ejercicio25();
+            break;
+        case 26:
+            ejercicio26();
+            break;
+        case 27:
+            ejercicio27();
+            break;
+        case 28:
+            ejercicio28();
+            break;
+        case 29:
+            ejercicio29();
+            break;
+        case 30:
+            ejercicio30();
+            break;
+        case 31:
             cout << "Saliendo del programa..." << endl;
             break;
         default:

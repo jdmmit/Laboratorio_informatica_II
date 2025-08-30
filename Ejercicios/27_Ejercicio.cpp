@@ -14,14 +14,46 @@ void pedir_Valores()
 
 int main()
 {
-    cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el residuo de la division A/B." << endl;
-    cout << "Ejemplo: si se ingresan 8 y 3 se debe imprimir: El residuo de la division 8/3 es: 2" << "\n"
-         << endl;
-
-    pedir_Valores();
-
-    cout << "El residuo de la division " << A << "/" << B << " es: " << A % B << endl;
+    cout << "Ejecutando Ejercicio 27..." << endl;
     cout << "-----------------------------------------" << endl;
+    cout << "Escriba un programa que actue como una calculadora con operaciones de suma, resta, multiplicacion y division, el usuario debe ingresar los operandos y la operacion a realizar." << endl;
+
+    double A, B, resultado;
+    char op;
+
+    cout << "Ingrese el primer numero: ";
+    cin >> A;
+    cout << "Ingrese el segundo numero: ";
+    cin >> B;
+    cout << "Ingrese la operacion (+, -, *, /): ";
+    cin >> op;
+
+    switch (op)
+    {
+    case '+':
+        resultado = A + B;
+        break;
+    case '-':
+        resultado = A - B;
+        break;
+    case '*':
+        resultado = A * B;
+        break;
+    case '/':
+        if (B != 0)
+            resultado = A / B;
+        else
+        {
+            cout << "Error: division por cero no permitida." << endl;
+            return 0;
+        }
+        break;
+    default:
+        cout << "Operacion no valida." << endl;
+        return 0;
+    }
+
+    cout << "El resultado de " << A << " " << op << " " << B << " es: " << resultado << endl;
 
     return 0;
 }

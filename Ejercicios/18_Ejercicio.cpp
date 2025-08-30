@@ -17,10 +17,10 @@ int main()
 {
     cout << "Ejecutando Ejercicio 18...\n";
     cout << "-----------------------------------------\n";
-    cout << "Escriba un programa que pida un número N e imprima si es o no un cuadrado perfecto.\n";
+    cout << "Escriba un programa que pida un numero N e imprima si es o no un cuadrado perfecto.\n";
 
     int N;
-    cout << "Ingrese un número: ";
+    cout << "Ingrese un numero: ";
     cin >> N;
 
     cout << N << (sqrt(N) == (int)sqrt(N) ? " es " : " no es ") << "un cuadrado perfecto.\n";

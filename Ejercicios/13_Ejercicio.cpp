@@ -16,10 +16,10 @@ int main()
 {
     cout << "Ejecutando Ejercicio 5..." << endl;
     cout << "-----------------------------------------" << endl;
-    cout << "Escriba un programa que pida un número N e imprima todos los divisores de N." << endl;
+    cout << "Escriba un programa que pida un numero N e imprima todos los divisores de N." << endl;
 
     int N;
-    cout << "Ingrese un número: ";
+    cout << "Ingrese un numero: ";
     cin >> N;
 
     cout << "Los divisores de " << N << " son: ";

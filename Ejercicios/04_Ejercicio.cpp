@@ -16,7 +16,7 @@ int main()
 {
     cout << "Ejecutando Ejercicio 4..." << endl;
     cout << "-----------------------------------------" << endl;
-    cout << "Escriba un programa que pida dos números A y B e imprima en pantalla el menor." << endl;
+    cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el menor." << endl;
 
     pedir_Valores();
 

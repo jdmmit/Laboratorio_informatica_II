@@ -16,7 +16,7 @@ int main()
 {
     cout << "Ejecutando Ejercicio 11..." << endl;
     cout << "-----------------------------------------" << endl;
-    cout << "Escriba un programa que pida un número N e imprima en pantalla su tabla de multiplicar hasta 10xN." << endl;
+    cout << "Escriba un programa que pida un numero N e imprima en pantalla su tabla de multiplicar hasta 10xN." << endl;
 
     int N;
     cout << "Ingrese el valor de N: " << endl;

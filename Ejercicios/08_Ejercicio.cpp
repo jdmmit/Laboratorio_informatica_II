@@ -16,10 +16,10 @@ int main()
 {
     cout << "Ejecutando Ejercicio 8..." << endl;
     cout << "-----------------------------------------" << endl;
-    cout << "Escriba un programa que pida un número N e imprima en pantalla su factorial." << endl;
+    cout << "Escriba un programa que pida un numero N e imprima en pantalla su factorial." << endl;
 
     int N;
-    cout << "Ingrese un número: " << endl;
+    cout << "Ingrese un numero: " << endl;
     cin >> N;
 
     int factorial = 1;

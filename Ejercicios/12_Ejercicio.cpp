@@ -16,7 +16,7 @@ int main()
 {
     cout << "Ejecutando Ejercicio 12..." << endl;
     cout << "-----------------------------------------" << endl;
-    cout << "Escriba un programa que pida un número N e imprima todas las potencias desde N^1 hasta N^5." << endl;
+    cout << "Escriba un programa que pida un numero N e imprima todas las potencias desde N^1 hasta N^5." << endl;
 
     int N;
     cout << "Ingrese el valor de N: ";

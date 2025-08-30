@@ -16,10 +16,10 @@ int main()
 {
     cout << "Ejecutando Ejercicio 7..." << endl;
     cout << "-----------------------------------------" << endl;
-    cout << "Escriba un programa que pida un número N e imprima en pantalla la suma de todos los números entre 0 y N (incluyéndose el mismo)." << endl;
+    cout << "Escriba un programa que pida un numero N e imprima en pantalla la suma de todos los numeros entre 0 y N (incluyendose el mismo)." << endl;
 
     int N;
-    cout << "Ingrese un número: " << endl;
+    cout << "Ingrese un numero: " << endl;
     cin >> N;
 
     int suma = 0;
@@ -27,7 +27,7 @@ int main()
     {
         suma += i;
     }
-    cout << "La suma de los números entre 0 y " << N << " es: " << suma << endl;
+    cout << "La suma de los numeros entre 0 y " << N << " es: " << suma << endl;
 
     return 0;
 }
