@@ -74,7 +74,7 @@ void problema3()
     if (mes < 1 || mes > 12)
     {
         cout << mes << " es un mes invalido." << endl;
-        }
+    }
     cout << "Ingrese el dia: ";
     cin >> dia;
     // días máximo por mes (sin considerar año): febrero 28 (29 caso especial)
@@ -104,49 +104,263 @@ void problema3()
     cout << "-----------------------------------------" << endl;
 }
 
+bool validoTiempo(int t)
+{
+    int hh = t / 100;
+    int mm = t % 100;
+    return (t >= 0 && hh >= 0 && hh < 24 && mm >= 0 && mm < 60);
+}
+
 void problema4()
 {
     cout << "Ejecutando Problema 4..." << endl;
+    cout << "Escriba un programa para leer dos numeros enteros con el siguiente significado: el valor del primer numero representa una hora del dia en un reloj de 24 horas, de modo que 1245 representa las doce y cuarenta y cinco de la tarde. El segundo entero representa un tiempo de duracion de la misma manera, por lo que 345 representa tres horas y 45 minutos. El programa debe sumar esta duracion al primer numero, y el resultado sera impreso en la misma notacion, en este caso 1630, que es el tiempo de 3 horas y 45 minutos despues de 12:45." << endl;
+    cout << "-----------------------------------------" << endl;
+
+    int t, dur;
+    cout << "Ingrese la hora actual (hhmm): ";
+    cin >> t;
+    if (!validoTiempo(t))
+    {
+        cout << t << " es un tiempo invalido." << endl;
+        return;
+    }
+
+    cout << "Ingrese la duracion (hhmm): ";
+    cin >> dur;
+    int dh = dur / 100;
+    int dm = dur % 100;
+    if (dm < 0 || dm >= 60 || dh < 0)
+    {
+        cout << dur << " es un tiempo invalido." << endl;
+        return;
+    }
+
+    int hh = t / 100;
+    int mm = t % 100;
+    mm += dm;
+    hh += dh + (mm / 60);
+    mm = mm % 60;
+    hh = hh % 24; // ajustar en 24h
+    int resultado = hh * 100 + mm;
+    cout << "La hora es " << resultado << "." << endl;
 }
 
 void problema5()
 {
-    cout << "Resolviendo Problema 5..." << endl;
+    cout << "Ejecutando Problema 5..." << endl;
+    cout << "Escriba un programa que muestre el siguiente patrón en la pantalla: El tamaño del patrón estará determinado por un número entero impar que ingrese el usuario. En el ejemplo mostrado, el tamaño de la figura es 7" << endl;
+    cout << "-----------------------------------------" << endl;
+
+    int n;
+    cout << "Ingrese un numero impar positivo: ";
+    cin >> n;
+    if (n % 2 == 0 || n <= 0)
+    {
+        cout << "Ingrese un numero impar positivo." << endl;
+    }
+    int mid = (n / 2) + 1;
+    // parte superior
+    for (int i = 1; i <= mid; i++)
+    {
+        int stars = 2 * i - 1;
+        int spaces = mid - i;
+        for (int s = 0; s < spaces; s++)
+            cout << ' ';
+        for (int j = 0; j < stars; j++)
+            cout << '*';
+        cout << endl;
+    }
+    // parte inferior
+    for (int i = mid - 1; i >= 1; i--)
+    {
+        int stars = 2 * i - 1;
+        int spaces = mid - i;
+        for (int s = 0; s < spaces; s++)
+            cout << ' ';
+        for (int j = 0; j < stars; j++)
+            cout << '*';
+        cout << endl;
+    }
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema6()
 {
-    cout << "Resolviendo Problema 6..." << endl;
+    cout << "Ejecutando Problema 6..." << endl;
+    cout << " Escriba un programa que encuentre el valor aproximado del número de euler en base a la siguiente suma infinita : e = 1 / 0 !+1 / 1 !+1 / 2 !+1 / 3 !+1 / 4 !+1 / 5 !+... El usuario debe ingresar el número de elementos usados en la aproximación." << endl;
+
+    cout << "-----------------------------------------" << endl;
+
+    int elementos;
+    cout << "Ingrese el número de elementos para la aproximación: ";
+    cin >> elementos;
+
+    double euler = 0.0;
+    long long factorial = 1;
+
+    for (int i = 0; i < elementos; i++)
+    {
+        if (i > 0)
+            factorial *= i;
+        euler += 1.0 / factorial;
+    }
+
+    cout << "El valor aproximado de euler es: " << euler << endl;
+
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema7()
 {
-    cout << "Resolviendo Problema 7..." << endl;
+    cout << "Ejecutando Problema 7..." << endl;
+    cout << " En la serie de Fibonacci, cada número es la suma de los 2 anteriores e inicia con 1 y 1. Ej: 1, 1, 2, 3, 5, 8, .... Escriba un programa que reciba un número n y halle la suma de todos los números pares en la serie de Fibonacci menores a n" << endl;
+    cout << "-----------------------------------------" << endl;
+
+    int n;
+    cout << "Ingrese un número: ";
+    cin >> n;
+
+    int a = 1, b = 1, suma = 0;
+    while (b < n)
+    {
+        if (b % 2 == 0)
+        {
+            suma += b;
+        }
+        int temp = b;
+        b += a;
+        a = temp;
+    }
+
+    cout << "La suma de los números pares en la serie de Fibonacci menores a " << n << " es: " << suma << endl;
+
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema8()
 {
-    cout << "Resolviendo Problema 8..." << endl;
+    cout << "Ejecutando Problema 8..." << endl;
+    cout << "Escriba un programa que reciba 3 números a, b, c, y calcule la suma de todos los múltiplos de a y b que sean menores a c. Tenga en cuenta no sumar 2 veces los múltiplos comunes. " << endl;
+    cout << "-----------------------------------------" << endl;
+
+    int a;
+    int b;
+    int c;
+    cout << "Ingrese el numero de a: ";
+    cin >> a;
+    cout << "Ingrese el numero de b: ";
+    cin >> b;
+    cout << "Ingrese el numero de c: ";
+    cin >> c;
+
+    int multiplos = 0;
+    for (int i = 1; i < c; i++)
+    {
+        if (i % a == 0 || i % b == 0)
+        {
+            multiplos += i;
+        }
+    }
+    cout << "La suma de los múltiplos de " << a << " y " << b << " menores a " << c << " es: " << multiplos << endl;
+
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema9()
 {
-    cout << "Resolviendo Problema 9..." << endl;
+    cout << "Ejecutando Problema 9..." << endl;
+    cout << " Escriba un programa que pida un número entero N e imprima el resultado de la suma de todos sus dígitos elevados a sí mismos." << endl;
+    cout << "-----------------------------------------" << endl;
+
+    int n;
+    cout << "Ingrese un numero entero: ";
+    cin >> n;
+
+    int suma = 0;
+    while (n > 0)
+    {
+        int digito = n % 10;
+        int potencia = 1;
+        for (int i = 0; i < digito; ++i)
+            potencia *= digito;
+        suma += potencia;
+        n /= 10;
+    }
+
+    cout << "La suma de los dígitos elevados a sí mismos es: " << suma << endl;
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema10()
 {
-    cout << "Resolviendo Problema 10..." << endl;
+    cout << "Ejecutando Problema 10..." << endl;
+    cout << " Escriba un programa que reciba un número n e imprima el enésimo número primo." << endl;
+    cout << "-----------------------------------------" << endl;
+
+    int n;
+    cout << "Ingrese el valor de n: ";
+    cin >> n;
+
+    int contador = 0;
+    int numero = 1;
+
+    while (contador < n)
+    {
+        numero++;
+        bool esPrimo = true;
+
+        for (int i = 2; i <= numero / 2; i++)
+        {
+            if (numero % i == 0)
+            {
+                esPrimo = false;
+                break;
+            }
+        }
+
+        if (esPrimo)
+        {
+            contador++;
+        }
+    }
+
+    cout << "El " << n << "° número primo es: " << numero << endl;
+
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema11()
 {
-    cout << "Resolviendo Problema 11..." << endl;
+    cout << "Ejecutando Problema 11..." << endl;
+    cout << "Escriba un programa que reciba un número y calcule el mínimo común múltiplo de todos los números enteros entre 1 y el número ingresado." << endl;
+    cout << "-----------------------------------------" << endl;
+    int n;
+    cout << "Ingrese un número: ";
+    cin >> n;
+
+    int mcm = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        // Calcula el MCD de mcm e i
+        int a = mcm, b = i;
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        int mcd = a;
+        mcm = (mcm * i) / mcd;
+    }
+
+    cout << "El mínimo común múltiplo de los números entre 1 y " << n << " es: " << mcm << endl;
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema12()
 {
-    cout << "Resolviendo Problema 12..." << endl;
+    cout << "Ejecutando Problema 12..." << endl;
 }
 
 void problema13()
