@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -237,7 +239,7 @@ int main()
             cout << "El perimetro del circulo es: " << perimetro << endl;
             cout << "El area del circulo es: " << area << endl;
 
-            return 0;
+            break;
         }
         case 10:
         {
@@ -256,7 +258,7 @@ int main()
                     cout << i << endl;
                 }
             }
-            return 0;
+            break;
         }
         case 11:
         {
@@ -275,6 +277,7 @@ int main()
             break;
         }
         case 12:
+        {
             cout << "Ejecutando Ejercicio 12..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida un numero N e imprima todas las potencias desde N^1 hasta N^5." << endl;
@@ -291,26 +294,30 @@ int main()
                 cout << N << "^" << i << " = " << potencia << endl;
             }
             break;
+        }
         case 13:
+        {
             cout << "Ejecutando Ejercicio 13..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida un numero N e imprima todos los divisores de N." << endl;
 
-            int N;
+            int M;
             cout << "Ingrese un numero: ";
-            cin >> N;
+            cin >> M;
 
-            cout << "Los divisores de " << N << " son: ";
-            for (int i = 1; i <= N; i++)
+            cout << "Los divisores de " << M << " son: ";
+            for (int i = 1; i <= M; i++)
             {
-                if (N % i == 0)
+                if (M % i == 0)
                 {
                     cout << i << " ";
                 }
             }
             cout << endl;
             break;
+        }
         case 14:
+        {
             cout << "Ejecutando Ejercicio 14..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que imprima dos columnas paralelas, una con los numeros del 1 al 50 y otra con los numeros del 50 al 1." << endl;
@@ -320,7 +327,9 @@ int main()
                 cout << i << "\t" << (51 - i) << endl;
             }
             break;
+        }
         case 15:
+        {
             cout << "Ejecutando Ejercicio 15..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida constantemente numeros hasta que se ingrese el numero cero e imprima en pantalla la suma de todos los numeros ingresados." << endl;
@@ -340,7 +349,9 @@ int main()
 
             cout << "La suma de todos los numeros ingresados es: " << suma << endl;
             break;
+        }
         case 16:
+        {
             cout << "Ejecutando Ejercicio 16..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida constantemente numeros hasta que se ingrese el numero cero e imprima en pantalla el promedio de los numeros ingresados (excluyendo el cero)." << endl;
@@ -361,7 +372,9 @@ int main()
                 cout << "No se ingresaron numeros validos." << endl;
 
             break;
+        }
         case 17:
+        {
             cout << "Ejecutando Ejercicio 17..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida constantemente numeros hasta que se ingrese el numero cero e imprima en pantalla el mayor de todos los numeros ingresados." << endl;
@@ -385,7 +398,9 @@ int main()
             else
                 cout << "No se ingresaron numeros validos." << endl;
             break;
+        }
         case 18:
+        {
             cout << "Ejecutando Ejercicio 18...\n";
             cout << "-----------------------------------------\n";
             cout << "Escriba un programa que pida un numero N e imprima si es o no un cuadrado perfecto.\n";
@@ -396,7 +411,9 @@ int main()
 
             cout << N << (sqrt(N) == (int)sqrt(N) ? " es " : " no es ") << "un cuadrado perfecto.\n";
             break;
+        }
         case 19:
+        {
             cout << "Ejecutando Ejercicio 19..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida un numero N e imprima si es o no un numero primo" << endl;
@@ -432,8 +449,10 @@ int main()
                 cout << "El numero " << N << " no es primo." << endl;
             }
 
-            return 0;
+            break;
+        }
         case 20:
+        {
             cout << "Ejecutando Ejercicio 20..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida un numero N e imprima si es o no un palindromo (igual de derecha a izquierda que de izquierda a derecha)." << endl;
@@ -460,7 +479,9 @@ int main()
                 cout << "El numero no es un palindromo." << endl;
             }
             break;
+        }
         case 21:
+        {
             cout << "Ejecutando Ejercicio 21..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida un caracter C, si es una letra la debe convertir de mayuscula a minuscula y viceversa e imprimirla." << endl;
@@ -471,7 +492,9 @@ int main()
 
             cout << (C >= 'A' && C <= 'Z' ? char(C + 32) : (C >= 'a' && C <= 'z' ? char(C - 32) : 'X')) << endl;
             break;
+        }
         case 22:
+        {
             cout << "Ejecutando Ejercicio 22..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida una cantidad entera de segundos y la imprima en formato horas:minutos:segundos." << endl;
@@ -487,16 +510,21 @@ int main()
             cout << "La cantidad de segundos " << totalSegundos << " es equivalente a: ";
             cout << horas << " horas, " << minutos << " minutos y " << segundos << " segundos." << endl;
             break;
+        }
         case 23:
+        {
             cout << "Ejecutando Ejercicio 23..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida dos numeros A y B e imprima en pantalla el minimo comun multiplo entre los dos." << endl;
-            int maximo, minimo;
-
             int H, I;
+            cout << "Ingrese el valor de A: ";
+            cin >> H;
+            cout << "Ingrese el valor de B: ";
+            cin >> I;
 
-            maximo = (H > I) ? H : I;
-            minimo = (H < I) ? H : I;
+            int maximo = (H > I) ? H : I;
+            int minimo = (H < I) ? H : I;
+            int a = H, b = I;
 
             while (minimo != 0)
             {
@@ -505,9 +533,11 @@ int main()
                 maximo = temp;
             }
 
-            cout << "El minimo comun multiplo de " << H << " y " << I << " es: " << (H * I) / maximo << endl;
+            cout << "El minimo comun multiplo de " << a << " y " << b << " es: " << (a * b) / maximo << endl;
             break;
+        }
         case 24:
+        {
             cout << "Ejecutando Ejercicio 24..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida una numero entero e imprima un cuadrado de dicho tamano, los bordes del cuadrado deben estar hechos con el caracter `+' y el interior debe estar vacio." << endl;
@@ -532,7 +562,9 @@ int main()
                 cout << endl;
             }
             break;
+        }
         case 25:
+        {
             cout << "Ejecutando Ejercicio 25..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida un numero N e imprima en pantalla la cantidad de digitos de N." << endl;
@@ -542,16 +574,24 @@ int main()
             cin >> N;
 
             int cantidad_digitos = 0;
-            while (N != 0)
+            int temp = N;
+            if (temp == 0)
+                cantidad_digitos = 1;
+            else
             {
-                N /= 10;
-                cantidad_digitos++;
+                while (temp != 0)
+                {
+                    temp /= 10;
+                    cantidad_digitos++;
+                }
             }
 
             cout << "La cantidad de digitos es: " << cantidad_digitos << endl;
             break;
+        }
         case 26:
-            cout << "Ejecutando Ejercicio 18..." << endl;
+        {
+            cout << "Ejecutando Ejercicio 26..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que pida tres numeros e imprima el tipo de triangulo (isosceles, equilatero, escaleno) que se formaria, si sus lados tienen la longitud definida por los numeros ingresados. Tenga en cuenta el caso en que los numeros ingresados no forman un triangulo." << endl;
 
@@ -587,7 +627,9 @@ int main()
                 cout << "Los numeros ingresados no forman un triangulo." << endl;
             }
             break;
+        }
         case 27:
+        {
             cout << "Ejecutando Ejercicio 27..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que actue como una calculadora con operaciones de suma, resta, multiplicacion y division, el usuario debe ingresar los operandos y la operacion a realizar." << endl;
@@ -596,6 +638,10 @@ int main()
             double resultado;
 
             int J, K;
+            cout << "Ingrese el primer operando: ";
+            cin >> J;
+            cout << "Ingrese el segundo operando: ";
+            cin >> K;
             cout << "Ingrese la operacion a realizar (+, -, *, /): ";
             cin >> operacion;
 
@@ -629,7 +675,9 @@ int main()
                 break;
             }
             break;
+        }
         case 28:
+        {
             cout << "Ejecutando Ejercicio 28..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que encuentre el valor aproximado de pi en base a la siguiente suma infinita:" << endl;
@@ -647,13 +695,13 @@ int main()
             pi *= 4;
 
             cout << "El valor aproximado de pi es: " << pi << endl;
-            return 0;
             break;
+        }
         case 29:
+        {
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que adivine un numero A (entre 0 y 100) seleccionado por el usuario(el numero NO se ingresa al programa), el programa imprimira en pantalla un numero B y el usuario usara los simbolos `> ', `<' y `=' para indicarle al programa si B es mayor, menor o igual que A.El programa imprimira un nuevo numero B, con base en simbolo ingresado por el usuario, y repetira el proceso hasta acertar el numero seleccionado por usuario." << endl;
 
-            int A = rand() % 101; // Numero a adivinar
             int B;
             char simbolo;
 
@@ -682,7 +730,9 @@ int main()
                 }
             } while (simbolo != '=');
             break;
+        }
         case 30:
+        {
             cout << "Ejecutando Ejercicio 30..." << endl;
             cout << "-----------------------------------------" << endl;
             cout << "Escriba un programa que genere un numero aleatorio A (entre 0 y 100) y le pida al usuario que lo adivine, el usuario ingresa un numero B y el programa le dira si B es mayor o menor que A, esto se repetira hasta que el usuario adivine el numero, en ese momento el programa le dira el numero de intentos que tardo el usuario en adivinar el numero. Nota: para generar el numero aleatorio use la funcion rand() de la libreria <cstdlib>, recuerde convertirlo al rango (0,100)." << endl;
@@ -714,11 +764,12 @@ int main()
 
             } while (B != A);
             break;
+        }
         case 31:
             cout << "Saliendo del programa..." << endl;
             break;
         default:
-            cout << "Opcion invalida. Por favor, seleccione una opcion del 1 al 18." << endl;
+            cout << "Opcion invalida. Por favor, seleccione una opcion del 1 al 30." << endl;
             break;
         }
     }

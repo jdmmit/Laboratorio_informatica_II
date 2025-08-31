@@ -6,21 +6,107 @@ using namespace std;
 void problema1()
 {
     cout << "Resolviendo Problema 1..." << endl;
+    cout << "Escriba un programa que identifique si un carácter ingresado es una vocal, una consonante o ninguna de las 2 e imprima un mensaje según el caso." << endl;
+    cout << "-----------------------------------------" << endl;
+
+    char c;
+    cout << "Ingrese un caracter: ";
+    cin >> c;
+
+    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
+    {
+        cout << "No es una letra." << endl;
+    }
+    else
+    {
+        // Pasar a minúscula si es mayúscula
+        if (c >= 'A' && c <= 'Z')
+        {
+            c = c + 32;
+        }
+
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+        {
+            cout << "Es una vocal." << endl;
+        }
+        else
+        {
+            cout << "Es una consonante." << endl;
+        }
+    }
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema2()
 {
-    cout << "Resolviendo Problema 2..." << endl;
+    cout << "Ejecutando Problema 2..." << endl;
+    cout << "Se necesita un programa que permita determinar la mínima combinación de billetes y monedas para una cantidad de dinero determinada.Los billetes en circulación son de $50.000, $20.000, $10.000, $5.000, $2.000 y $1.000, y las monedas son de $500, $200, $100 y $50.Hacer un programa que entregue el número de billetes y monedas de cada denominación para completar la cantidad deseada.Si por medio de los billetes y monedas disponibles no se puede lograr la cantidad deseada, el sistema deberá decir lo que resta para lograrla." << endl;
+    cout << "-----------------------------------------" << endl;
+
+    int monto;
+    cout << "Ingrese el monto: ";
+    cin >> monto;
+    int den[] = {50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50};
+    int cant[10];
+    for (int i = 0; i < 10; i++)
+    {
+        cant[i] = monto / den[i];
+        monto = monto % den[i];
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        cout << den[i] << " : " << cant[i] << endl;
+    }
+    cout << "Faltante: " << monto << endl;
+
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema3()
 {
-    cout << "Resolviendo Problema 3..." << endl;
+    cout << "Ejecutando Problema 3..." << endl;
+    cout << "Escriba un programa que debe leer un mes y un día de dicho mes para luego decir si esa combinación de mes y día son válidos. El caso más especial es el 29 de febrero, en dicho caso imprimir posiblemente año bisiesto. " << endl;
+    cout << "-----------------------------------------" << endl;
+
+    int dia, mes;
+    cout << "Ingrese el mes: ";
+    cin >> mes; // si ingresan solo "14" -> mes inválido será detectado
+    if (mes < 1 || mes > 12)
+    {
+        cout << mes << " es un mes invalido." << endl;
+        }
+    cout << "Ingrese el dia: ";
+    cin >> dia;
+    // días máximo por mes (sin considerar año): febrero 28 (29 caso especial)
+    int maxd;
+    if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
+        maxd = 31;
+    else if (mes == 4 || mes == 6 || mes == 9 || mes == 11)
+        maxd = 30;
+    else
+        maxd = 28; // febrero por defecto
+    if (dia < 1 || dia > maxd)
+    {
+        if (mes == 2 && dia == 29)
+        {
+            cout << "29/2 es valida en bisiesto." << endl;
+        }
+        else
+        {
+            cout << dia << "/" << mes << " es una fecha invalida." << endl;
+        }
+    }
+    else
+    {
+        cout << dia << "/" << mes << " es una fecha valida." << endl;
+    }
+
+    cout << "-----------------------------------------" << endl;
 }
 
 void problema4()
 {
-    cout << "Resolviendo Problema 4..." << endl;
+    cout << "Ejecutando Problema 4..." << endl;
 }
 
 void problema5()
