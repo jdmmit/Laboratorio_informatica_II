@@ -1,10 +1,11 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-void vocalConsonante()
+void problema1()
 {
-    cout << "Resolviendo Vocal Consonante..." << endl;
+    cout << "Resolviendo Problema 1..." << endl;
     cout << "Escriba un programa que identifique si un carácter ingresado es una vocal, una consonante o ninguna de las 2 e imprima un mensaje según el caso." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -36,9 +37,9 @@ void vocalConsonante()
     cout << "-----------------------------------------" << endl;
 }
 
-void cambioBilletesMonedas()
+void problema2()
 {
-    cout << "Ejecutando Cambio Billetes Monedas..." << endl;
+    cout << "Ejecutando Problema 2..." << endl;
     cout << "Se necesita un programa que permita determinar la mínima combinación de billetes y monedas para una cantidad de dinero determinada.Los billetes en circulación son de $50.000, $20.000, $10.000, $5.000, $2.000 y $1.000, y las monedas son de $500, $200, $100 y $50.Hacer un programa que entregue el número de billetes y monedas de cada denominación para completar la cantidad deseada.Si por medio de los billetes y monedas disponibles no se puede lograr la cantidad deseada, el sistema deberá decir lo que resta para lograrla." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -61,9 +62,9 @@ void cambioBilletesMonedas()
     cout << "-----------------------------------------" << endl;
 }
 
-void validarFecha()
+void problema3()
 {
-    cout << "Ejecutando Validar Fecha..." << endl;
+    cout << "Ejecutando Problema 3..." << endl;
     cout << "Escriba un programa que debe leer un mes y un día de dicho mes para luego decir si esa combinación de mes y día son válidos. El caso más especial es el 29 de febrero, en dicho caso imprimir posiblemente año bisiesto. " << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -110,9 +111,9 @@ bool validoTiempo(int t)
     return (t >= 0 && hh >= 0 && hh < 24 && mm >= 0 && mm < 60);
 }
 
-void sumarTiempoReloj()
+void problema4()
 {
-    cout << "Ejecutando Sumar Tiempo Reloj..." << endl;
+    cout << "Ejecutando Problema 4..." << endl;
     cout << "Escriba un programa para leer dos numeros enteros con el siguiente significado: el valor del primer numero representa una hora del dia en un reloj de 24 horas, de modo que 1245 representa las doce y cuarenta y cinco de la tarde. El segundo entero representa un tiempo de duracion de la misma manera, por lo que 345 representa tres horas y 45 minutos. El programa debe sumar esta duracion al primer numero, y el resultado sera impreso en la misma notacion, en este caso 1630, que es el tiempo de 3 horas y 45 minutos despues de 12:45." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -145,9 +146,9 @@ void sumarTiempoReloj()
     cout << "La hora es " << resultado << "." << endl;
 }
 
-void patronDiamante()
+void problema5()
 {
-    cout << "Ejecutando Patron Diamante..." << endl;
+    cout << "Ejecutando Problema 5..." << endl;
     cout << "Escriba un programa que muestre el siguiente patrón en la pantalla: El tamaño del patrón estará determinado por un número entero impar que ingrese el usuario. En el ejemplo mostrado, el tamaño de la figura es 7" << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -184,9 +185,9 @@ void patronDiamante()
     cout << "-----------------------------------------" << endl;
 }
 
-void aproximacionEuler()
+void problema6()
 {
-    cout << "Ejecutando Aproximacion Euler..." << endl;
+    cout << "Ejecutando Problema 6..." << endl;
     cout << " Escriba un programa que encuentre el valor aproximado del número de euler en base a la siguiente suma infinita : e = 1 / 0 !+1 / 1 !+1 / 2 !+1 / 3 !+1 / 4 !+1 / 5 !+... El usuario debe ingresar el número de elementos usados en la aproximación." << endl;
 
     cout << "-----------------------------------------" << endl;
@@ -210,9 +211,9 @@ void aproximacionEuler()
     cout << "-----------------------------------------" << endl;
 }
 
-void fibonacciPares()
+void problema7()
 {
-    cout << "Ejecutando Fibonacci Pares..." << endl;
+    cout << "Ejecutando Problema 7..." << endl;
     cout << " En la serie de Fibonacci, cada número es la suma de los 2 anteriores e inicia con 1 y 1. Ej: 1, 1, 2, 3, 5, 8, .... Escriba un programa que reciba un número n y halle la suma de todos los números pares en la serie de Fibonacci menores a n" << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -237,9 +238,9 @@ void fibonacciPares()
     cout << "-----------------------------------------" << endl;
 }
 
-void multiplosComunes()
+void problema8()
 {
-    cout << "Ejecutando Multiplos Comunes..." << endl;
+    cout << "Ejecutando Problema 8..." << endl;
     cout << "Escriba un programa que reciba 3 números a, b, c, y calcule la suma de todos los múltiplos de a y b que sean menores a c. Tenga en cuenta no sumar 2 veces los múltiplos comunes. " << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -266,9 +267,9 @@ void multiplosComunes()
     cout << "-----------------------------------------" << endl;
 }
 
-void sumaDigitosPotencia()
+void problema9()
 {
-    cout << "Ejecutando Suma Digitos Potencia..." << endl;
+    cout << "Ejecutando Problema 9..." << endl;
     cout << " Escriba un programa que pida un número entero N e imprima el resultado de la suma de todos sus dígitos elevados a sí mismos." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -291,9 +292,9 @@ void sumaDigitosPotencia()
     cout << "-----------------------------------------" << endl;
 }
 
-void enesimoPrimo()
+void problema10()
 {
-    cout << "Ejecutando Enesimo Primo..." << endl;
+    cout << "Ejecutando Problema 10..." << endl;
     cout << " Escriba un programa que reciba un número n e imprima el enésimo número primo." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -329,9 +330,9 @@ void enesimoPrimo()
     cout << "-----------------------------------------" << endl;
 }
 
-void mcmSecuencia()
+void problema11()
 {
-    cout << "Ejecutando MCM Secuencia..." << endl;
+    cout << "Ejecutando Problema 11..." << endl;
     cout << "Escriba un programa que reciba un número y calcule el mínimo común múltiplo de todos los números enteros entre 1 y el número ingresado." << endl;
     cout << "-----------------------------------------" << endl;
     int n;
@@ -357,9 +358,9 @@ void mcmSecuencia()
     cout << "-----------------------------------------" << endl;
 }
 
-void mayorFactorPrimo()
+void problema12()
 {
-    cout << "Ejecutando Mayor Factor Primo..." << endl;
+    cout << "Ejecutando Problema 12..." << endl;
     cout << "Escriba un programa que calcula el máximo factor primo de un número." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -381,9 +382,9 @@ void mayorFactorPrimo()
     cout << "-----------------------------------------" << endl;
 }
 
-void sumaPrimos()
+void problema13()
 {
-    cout << "Ejecutando Suma Primos..." << endl;
+    cout << "Ejecutando Problema 13..." << endl;
     cout << " Escriba un programa que reciba un número y calcule la suma de todos los primos menores que el número ingresado." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -413,9 +414,9 @@ void sumaPrimos()
     cout << "-----------------------------------------" << endl;
 }
 
-void numeroPalindromo()
+void problema14()
 {
-    cout << "Ejecutando Numero Palindromo..." << endl;
+    cout << "Ejecutando Problema 14..." << endl;
     cout << " Un número palíndromo es igual de derecha a izquierda y de izquierda a derecha," << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -444,9 +445,9 @@ void numeroPalindromo()
     cout << "-----------------------------------------" << endl;
 }
 
-void espiralDiagonal()
+void problema15()
 {
-    cout << "Ejecutando Espiral Diagonal..." << endl;
+    cout << "Ejecutando Problema 15..." << endl;
     cout << " Empezando con el número 1 y moviéndose hacia la izquierda y en sentido horario se genera una espiral de números como la siguiente :  En el caso de esta espiral de 5x5, la suma de los números en la diagonal es 101. Escriba un programa que reciba un número impar n y calcule la suma de los números en la diagonal de una espiral de nxn." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -470,9 +471,9 @@ void espiralDiagonal()
     cout << "-----------------------------------------" << endl;
 }
 
-void serieCollatz()
+void problema16()
 {
-    cout << "Ejecutando Serie Collatz..." << endl;
+    cout << "Ejecutando Problema 16..." << endl;
     cout << " La serie de Collatz se conforma con la siguiente regla: sea n un elemento de la serie, si n es par, el siguiente elemento es n/2, y si n es impar, el siguiente elemento es 3n+1. Escriba un programa que reciba un número k y calcule cual es el elemento inicial j (semilla), menor que k, que produce la serie más larga y diga cuantos términos m tiene la serie. Tip: la serie termina al llegar a un elemento cuyo valor sea 1." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -514,9 +515,9 @@ void serieCollatz()
     cout << "-----------------------------------------" << endl;
 }
 
-void numerosTriangulares()
+void problema17()
 {
-    cout << "Ejecutando Numeros Triangulares..." << endl;
+    cout << "Ejecutando Problema 17..." << endl;
     cout << " La secuencia de números triangulares se forma al sumar su posición en el arreglo con el valor del número anterior: 1, 1+2=3, 3+3=6, 6+4=10, 10+5=15, 15+6=21, 21+7=28..." << endl;
     cout << "-----------------------------------------" << endl;
 
@@ -544,25 +545,26 @@ int main()
     while (opcion != 18)
     {
 
-        cout << "1. Vocal Consonante" << endl;
-        cout << "2. Cambio Billetes Monedas" << endl;
-        cout << "3. Validar Fecha" << endl;
-        cout << "4. Sumar Tiempo Reloj" << endl;
-        cout << "5. Patron Diamante" << endl;
-        cout << "6. Aproximacion Euler" << endl;
-        cout << "7. Fibonacci Pares" << endl;
-        cout << "8. Multiplos Comunes" << endl;
-        cout << "9. Suma Digitos Potencia" << endl;
-        cout << "10. Enesimo Primo" << endl;
-        cout << "11. MCM Secuencia" << endl;
-        cout << "12. Mayor Factor Primo" << endl;
-        cout << "13. Suma Primos" << endl;
-        cout << "14. Numero Palindromo" << endl;
-        cout << "15. Espiral Diagonal" << endl;
-        cout << "16. Serie Collatz" << endl;
-        cout << "17. Numeros Triangulares" << endl;
+        cout << "1. Problema 1" << endl;
+        cout << "2. Problema 2" << endl;
+        cout << "3. Problema 3" << endl;
+        cout << "4. Problema 4" << endl;
+        cout << "5. Problema 5" << endl;
+        cout << "6. Problema 6" << endl;
+        cout << "7. Problema 7" << endl;
+        cout << "8. Problema 8" << endl;
+        cout << "9. Problema 9" << endl;
+        cout << "10. Problema 10" << endl;
+        cout << "11. Problema 11" << endl;
+        cout << "12. Problema 12" << endl;
+        cout << "13. Problema 13" << endl;
+        cout << "14. Problema 14" << endl;
+        cout << "15. Problema 15" << endl;
+        cout << "16. Problema 16" << endl;
+        cout << "17. Problema 17" << endl;
+        cout << "18. Problema 18" << endl;
         cout << "-----------------------------------------" << endl;
-        cout << "18. Salir" << endl;
+        cout << "19. Salir" << endl;
         cout << "Ingrese una opcion: " << endl;
 
         cin >> opcion;
@@ -570,56 +572,56 @@ int main()
         switch (opcion)
         {
         case 1:
-            vocalConsonante();
+            problema1();
             break;
         case 2:
-            cambioBilletesMonedas();
+            problema2();
             break;
         case 3:
-            validarFecha();
+            problema3();
             break;
 
         case 4:
-            sumarTiempoReloj();
+            problema4();
             break;
         case 5:
-            patronDiamante();
+            problema5();
             break;
         case 6:
-            aproximacionEuler();
+            problema6();
             break;
         case 7:
-            fibonacciPares();
+            problema7();
             break;
         case 8:
-            multiplosComunes();
+            problema8();
             break;
         case 9:
-            sumaDigitosPotencia();
+            problema9();
             break;
         case 10:
-            enesimoPrimo();
+            problema10();
             break;
         case 11:
-            mcmSecuencia();
+            problema11();
             break;
         case 12:
-            mayorFactorPrimo();
+            problema12();
             break;
         case 13:
-            sumaPrimos();
+            problema13();
             break;
         case 14:
-            numeroPalindromo();
+            problema14();
             break;
         case 15:
-            espiralDiagonal();
+            problema15();
             break;
         case 16:
-            serieCollatz();
+            problema16();
             break;
         case 17:
-            numerosTriangulares();
+            problema17();
             break;
         case 18:
             cout << "Saliendo del programa..." << endl;

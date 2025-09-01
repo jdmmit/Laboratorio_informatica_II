@@ -9,7 +9,7 @@ int main()
 
     int opcion = 0;
 
-    while (opcion != 19)
+    while (opcion != 18)
     {
 
         cout << "1. Problema 1" << endl;
@@ -29,9 +29,8 @@ int main()
         cout << "15. Problema 15" << endl;
         cout << "16. Problema 16" << endl;
         cout << "17. Problema 17" << endl;
-        cout << "18. Problema 18" << endl;
         cout << "-----------------------------------------" << endl;
-        cout << "19. Salir" << endl;
+        cout << "18. Salir" << endl;
 
         cin >> opcion;
 
@@ -406,33 +405,166 @@ int main()
             break;
         }
         case 12:
+        {
             cout << "Ejecutando Problema 12..." << endl;
+            cout << "Escriba un programa que calcula el máximo factor primo de un número." << endl;
+            cout << "-----------------------------------------" << endl;
+
+            int num;
+            cout << "Ingrese un número: ";
+            cin >> num;
+
+            int maxFac = 1;
+            for (int i = 2; i <= num; i++)
+            {
+                while (num % i == 0)
+                {
+                    maxFac = i;
+                    num /= i;
+                }
+            }
+
+            cout << "El máximo factor primo es: " << maxFac << endl;
+
             break;
+        }
         case 13:
+        {
             cout << "Ejecutando Problema 13..." << endl;
+            cout << " Escriba un programa que reciba un número y calcule la suma de todos los primos menores que el número ingresado." << endl;
+
+            int nume;
+            cout << "Ingrese un número: ";
+            cin >> nume;
+
+            int sum = 0;
+            for (int i = 2; i < nume; i++)
+            {
+                bool Primo = true;
+                for (int j = 2; j * j <= i; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        Primo = false;
+                        break;
+                    }
+                }
+                if (Primo)
+                {
+                    sum += i;
+                }
+            }
+
+            cout << "La suma de los primos menores que " << nume << " es: " << sum << endl;
+
             break;
+        }
         case 14:
+        {
             cout << "Ejecutando Problema 14..." << endl;
+            cout << " Un número palíndromo es igual de derecha a izquierda y de izquierda a derecha," << endl;
+            cout << "-----------------------------------------" << endl;
+
+            int nu;
+            cout << "Ingrese un número: ";
+            cin >> nu;
+
+            int original = nu;
+            int invertido = 0;
+
+            while (nu > 0)
+            {
+                invertido = invertido * 10 + nu % 10;
+                nu /= 10;
+            }
+
+            if (original == invertido)
+            {
+                cout << original << " es un número palíndromo." << endl;
+            }
+            else
+            {
+                cout << original << " no es un número palíndromo." << endl;
+            }
+
+            cout << "-----------------------------------------" << endl;
             break;
+        }
         case 15:
+        {
             cout << "Ejecutando Problema 15..." << endl;
+            cout << " Empezando con el número 1 y moviéndose hacia la izquierda y en sentido horario se genera una espiral de números como la siguiente :  En el caso de esta espiral de 5x5, la suma de los números en la diagonal es 101. Escriba un programa que reciba un número impar n y calcule la suma de los números en la diagonal de una espiral de nxn." << endl;
+
+            int n;
+            cin >> n;
+            if (n % 2 == 0)
+            {
+                cout << "El número debe ser impar." << endl;
+                return 0;
+            }
+
+            long long suma = 1, k = 1;
+            while (k <= (n - 1) / 2)
+            {
+                suma += 16LL * k * k + 4LL * k + 4;
+                k++;
+            }
+
+            cout << "Resultado: " << suma << endl;
             break;
+        }
         case 16:
+        {
             cout << "Ejecutando Problema 16..." << endl;
-            break;
+            cout << " La serie de Collatz se conforma con la siguiente regla: sea n un elemento de la serie, si n es par, el siguiente elemento es n/2, y si n es impar, el siguiente elemento es 3n+1. Escriba un programa que reciba un número k y calcule cual es el elemento inicial j (semilla), menor que k, que produce la serie más larga y diga cuantos términos m tiene la serie. Tip: la serie termina al llegar a un elemento cuyo valor sea 1." << endl;
+            cout << "-----------------------------------------" << endl;
+
+            int k;
+            cin >> k;
+
+            int mejor = 1, mayor = 0;
+
+            for (int j = 1; j < k; j++)
+            {
+                int n = j, len = 1;
+                while (n != 1)
+                {
+                    n = (n % 2 == 0) ? n / 2 : 3 * n + 1;
+                    len++;
+                }
+                if (len > mayor)
+                {
+                    mayor = len;
+                    mejor = j;
+                }
+            }
+
+            cout << "Semilla: " << mejor << endl;
+            cout << "Longitud: " << mayor << endl;
+            return 0;
+        }
         case 17:
             cout << "Ejecutando Problema 17..." << endl;
+            cout << " La secuencia de números triangulares se forma al sumar su posición en el arreglo con el valor del número anterior: 1, 1+2=3, 3+3=6, 6+4=10, 10+5=15, 15+6=21, 21+7=28..." << endl;
+
+            int n;
+            cout << "Ingrese el valor de n: ";
+            cin >> n;
+
+            int triangular = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                triangular += i;
+            }
+
+            cout << "El número triangular en la posición " << n << " es: " << triangular << endl;
             break;
         case 18:
-            cout << "Ejecutando Problema 18..." << endl;
-            break;
-        case 19:
             cout << "Saliendo del programa..." << endl;
             break;
         default:
-            cout << "Opcion no valida. Por favor, seleccione una opcion del 1 al 19." << endl;
+            cout << "Opcion no valida. Por favor, seleccione una opcion del 1 al 18." << endl;
             break;
         }
     }
-    return 0;
 }
